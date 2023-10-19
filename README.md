@@ -5,7 +5,8 @@ The application Tracker tracks the user's location every 10 minutes and has a se
 
 The application Map retrieves the collected locations from the database and displays them on the map while connecting them with a line.
 
-Both applications have login, registration and password recovery windows. To reset the password, the user receives an email with a new password.![Screenshot_8](https://github.com/Misha-Kamskov/Tracker/assets/143383894/b59b2c2f-c219-497e-8ca1-24b449d04042)
+Both applications have login, registration and password recovery windows. To reset the password, the user receives an email with a new password.
+
 
 ![Screenshot_1](https://github.com/Misha-Kamskov/Tracker/assets/143383894/de201c55-13f2-45f0-8d12-af822c0882fe)
 ![Screenshot_2](https://github.com/Misha-Kamskov/Tracker/assets/143383894/d774e00c-4c4e-4f91-a784-5f0665c2714c)
