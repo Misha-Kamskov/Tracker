@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ScreenBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tracker.ui.tracker.TrackerFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_activity_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_tracker"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/ib_signout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="@dimen/screen_offset"
+            android:background="@drawable/ic_exit" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/img_tracker_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_tracker_is_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <ProgressBar
+        android:id="@+id/tracker_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:indeterminateDrawable="@drawable/pb_stop_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        app:layout_constraintWidth_percent="0.55" />
+
+    <TextView
+        android:id="@+id/tv_state_tracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tracker_off"
+        android:textColor="@color/black"
+        android:textFontWeight="600"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/img_tracker_indicator"
+        app:layout_constraintStart_toStartOf="@+id/img_tracker_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/img_tracker_indicator"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/tv_helper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textFontWeight="600"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_state_tracker"
+        app:layout_constraintStart_toStartOf="@+id/tv_state_tracker"
+        app:layout_constraintTop_toBottomOf="@+id/tracker_bar"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/tv_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_helper"
+        app:layout_constraintStart_toStartOf="@+id/tv_helper"
+        app:layout_constraintTop_toBottomOf="@+id/tv_helper"
+        app:layout_constraintVertical_bias="0.06" />
+
+
+    <Button
+        android:id="@+id/bt_start_stop"
+        style="@style/bt_collections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/main"
+        android:padding="24dp"
+        android:text="@string/start"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintWidth_percent="0.85"
+        app:strokeColor="@color/main"
+        app:strokeWidth="3dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

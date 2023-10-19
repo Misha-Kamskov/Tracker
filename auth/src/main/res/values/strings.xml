@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm password</string>
+    <string name="hint_user_name">User name</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sing_in">Sing in</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="question_sing_up">Don`t have an account?\nSing Up</string>
+    <string name="question_sing_in">Already have an account?\nSing In</string>
+    <string name="send_new_password">Send new password</string>
+    <string name="login_failed">Login failed!</string>
+    <string name="registration_completed">Registration completed!</string>
+    <string name="registration_failed">Registration failed!</string>
+    <string name="this_email_doesnt_exist">This email doesn\'t exist</string>
+    <string name="check_your_email">Check your email!</string>
+    <string name="something_went_wrong_password_wasnt_reset">Something went wrong, password wasn\'t reset</string>
+    <string name="cant_send_request">Can\'t send request</string>
+    <string name="write_correct_email">Write correct email!</string>
+    <string name="to_short_password">To short password!</string>
+    <string name="passwords_mismatch">Passwords mismatch!</string>
+    <string name="email_is_empty">Email is empty!</string>
+    <string name="empty_error_message" />
+</resources>

@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.example.data'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(':models')
+    implementation project(':models_impl')
+
+    // Base dependencies
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$android_material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "androidx.work:work-runtime-ktx:$work_runtime"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation "androidx.hilt:hilt-common:$hilt_common_work"
+    implementation "androidx.hilt:hilt-work:$hilt_common_work"
+    kapt "androidx.hilt:hilt-compiler:$hilt_common_work"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // Tests
+    testImplementation "junit:junit:$ju_test_impl"
+    androidTestImplementation "androidx.test.ext:junit:$ju_test_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$es_core"
+}

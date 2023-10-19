@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_map">Map</string>
+    <string name="last_hours">last hours</string>
+    <string name="timeline">Timeline</string>
+    <string name="download_failed">"Download failed!"</string>
+    <string name="any_locations">"There are not any locations!"</string>
+</resources>

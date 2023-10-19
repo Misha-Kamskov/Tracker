@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.example.models_impl'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("Float", "SENSITIVITY", "60.0f")
+            buildConfigField("Long", "PERIOD", "600000L")
+        }
+        debug {
+            buildConfigField("Float", "SENSITIVITY", "10.0f")
+            buildConfigField("Long", "PERIOD", "5000L")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(':utils')
+    implementation project(':models')
+
+    // Base dependencies
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$android_material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "androidx.work:work-runtime-ktx:$work_runtime"
+    implementation "androidx.datastore:datastore-preferences:$datastore_preferences"
+    implementation "com.google.code.gson:gson:$gson"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
+    implementation "com.google.firebase:firebase-firestore-ktx:$firestore_ktx"
+    implementation "com.google.firebase:firebase-auth-ktx:$firebase_auth_ktx"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation "androidx.hilt:hilt-common:$hilt_common_work"
+    implementation "androidx.hilt:hilt-work:$hilt_common_work"
+    kapt "androidx.hilt:hilt-compiler:$hilt_common_work"
+
+    // Tests
+    testImplementation "junit:junit:$ju_test_impl"
+    androidTestImplementation "androidx.test.ext:junit:$ju_test_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$es_core"
+
+}

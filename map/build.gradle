@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+android {
+    namespace 'com.example.tracker.map'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.example.tracker.map"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(':mvi')
+    implementation project(':auth')
+    implementation project(':data')
+    implementation project(':models')
+    implementation project(':models_impl')
+
+    // Base dependencies
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "com.google.android.material:material:$android_material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+    implementation "androidx.work:work-runtime-ktx:$work_runtime"
+    implementation "androidx.datastore:datastore-preferences:$datastore_preferences"
+    implementation "com.google.code.gson:gson:$gson"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom")
+    implementation "com.google.firebase:firebase-firestore-ktx:$firestore_ktx"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation "androidx.hilt:hilt-common:$hilt_common_work"
+    implementation "androidx.hilt:hilt-work:$hilt_common_work"
+    kapt "androidx.hilt:hilt-compiler:$hilt_common_work"
+
+    // Google maps
+    implementation "com.google.android.gms:play-services-maps:$maps_services"
+    implementation "com.google.android.gms:play-services-location:$location_services"
+
+    // Tests
+    testImplementation "junit:junit:$ju_test_impl"
+    androidTestImplementation "androidx.test.ext:junit:$ju_test_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$es_core"
+
+}

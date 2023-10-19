@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_tracker">Tracker</string>
+    <string name="tracker_off">TRACKER IS OFF</string>
+    <string name="collects_locations">COLLECTS LOCATIONS</string>
+    <string name="gps_off">GPS IS OFF</string>
+    <string name="tracker_cant_collect_locations">Tracker can\'t collect locations</string>
+    <string name="tracker">Tracker</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>\
+    <string name="permissions_doesn_t_assigned">Permissions doesn\'t assigned!</string>
+    <string name="counter">You have been collected locations: %1$s</string>
+    <string name="log_out">Log out</string>
+    <string name="do_you_want_log_out_and_clear_all_local_locations">Do you want to log out and clear all local locations?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="service_state_idle">Tracker is OFF</string>
+</resources>

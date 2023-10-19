@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="Base.Theme.Tracker" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/main</item>
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="bt_collections">
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.Tracker" parent="Base.Theme.Tracker" />
+
+    <style name="CustomMaterialDatePickerTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorSurface">@color/white</item>
+        <item name="android:textColorPrimary">@color/main</item>
+        <item name="colorPrimary">@color/main</item>
+    </style>
+
+    <style name="ScreenBackground">
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>
